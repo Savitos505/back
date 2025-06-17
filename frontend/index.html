@@ -1,0 +1,1695 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профессиональная полиграфия в Токмоке | Полиграфия "IPrint"</title>
+    <meta name="description" content="Профессиональные полиграфические услуги в Бишкеке: визитки, буклеты, баннеры, календари. Качественная печать по доступным ценам.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles */
+        :root {
+            --primary-color: #4361ee;
+            --primary-dark: #3a56d4;
+            --secondary-color: #3f37c9;
+            --accent-color: #4895ef;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --gray-color: #6c757d;
+            --light-gray: #e9ecef;
+            --success-color: #4cc9f0;
+            --warning-color: #f72585;
+            --font-main: 'Montserrat', sans-serif;
+            --font-heading: 'Playfair Display', serif;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--dark-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: #fff;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .section__header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section__title {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section__title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .section__subtitle {
+            font-size: 1rem;
+            color: var(--gray-color);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-family: var(--font-main);
+            font-size: 1rem;
+        }
+
+        .btn--primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn--primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow);
+        }
+
+        .btn--small {
+            padding: 8px 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Header styles */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .header.scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header__inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dark-color);
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        .nav {
+            position: fixed;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transform: translateY(-150%);
+            opacity: 0;
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .nav.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .nav__list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .nav__link {
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+            display: block;
+        }
+
+        .nav__link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .nav__link:hover::after {
+            width: 100%;
+        }
+
+        .header__contacts {
+            display: none;
+        }
+
+        .phone-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+
+        .phone-link:hover {
+            color: var(--primary-color);
+        }
+
+        .burger {
+            display: flex;
+            width: 30px;
+            height: 20px;
+            flex-direction: column;
+            justify-content: space-between;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1001;
+        }
+
+        .burger__line {
+            width: 100%;
+            height: 3px;
+            background-color: var(--dark-color);
+            transition: var(--transition);
+        }
+
+        .burger.active .burger__line:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .burger.active .burger__line:nth-child(2) {
+            opacity: 0;
+        }
+
+        .burger.active .burger__line:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        /* Hero section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 500px;
+            margin-top: 70px;
+        }
+
+        .hero-swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-slide {
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero__content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            max-width: 600px;
+            padding: 0 20px;
+        }
+
+        .hero__title {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero__text {
+            font-size: 1rem;
+            margin-bottom: 25px;
+            animation: fadeInUp 1s ease 0.2s forwards;
+            opacity: 0;
+        }
+
+        .hero .btn {
+            animation: fadeInUp 1s ease 0.4s forwards;
+            opacity: 0;
+        }
+
+        .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            background: white;
+            opacity: 0.7;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: var(--primary-color);
+            opacity: 1;
+        }
+
+        /* Services section */
+        .services__grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-card__icon {
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            background-color: var(--primary-color);
+        }
+
+        .service-card__title {
+            padding: 15px 15px 10px;
+            font-size: 1.3rem;
+        }
+
+        .service-card__desc {
+            padding: 0 15px;
+            color: var(--gray-color);
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .service-card__footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 15px;
+            border-top: 1px solid var(--light-gray);
+        }
+
+        .price {
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 1rem;
+        }
+
+        /* About section */
+        .about {
+            background-color: var(--light-color);
+        }
+
+        .about__inner {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .about__content {
+            order: 2;
+        }
+
+        .about__image {
+            order: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+
+        .about__image img {
+            width: 100%;
+            height: auto;
+            transition: var(--transition);
+        }
+
+        .about__image:hover img {
+            transform: scale(1.05);
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .stat-item {
+            text-align: center;
+            flex: 1;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--gray-color);
+        }
+
+        /* Portfolio section */
+        .portfolio__grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .portfolio-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 200px;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .portfolio-item__overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(67, 97, 238, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .portfolio-item__overlay h3 {
+            color: white;
+            font-size: 1.3rem;
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+
+        .portfolio-item:hover .portfolio-item__overlay {
+            opacity: 1;
+        }
+
+        .portfolio-item:hover .portfolio-item__overlay h3 {
+            transform: translateY(0);
+        }
+
+        /* Testimonials section */
+        .testimonials {
+            background-color: var(--light-color);
+        }
+
+        .testimonials-swiper {
+            padding: 15px;
+        }
+
+        .testimonial {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .testimonial__text {
+            font-style: italic;
+            margin-bottom: 15px;
+            color: var(--gray-color);
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .testimonial__text::before {
+            content: '"';
+            font-size: 3rem;
+            position: absolute;
+            top: -15px;
+            left: -10px;
+            color: var(--light-gray);
+            z-index: -1;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial__author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+
+        .author-info span {
+            font-size: 0.8rem;
+            color: var(--gray-color);
+        }
+
+        /* Contact form section */
+        .contact-form {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+        }
+
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+
+        .form-content {
+            padding: 30px;
+            color: var(--dark-color);
+        }
+
+        .form-content h2 {
+            margin-bottom: 15px;
+            color: var(--dark-color);
+            font-size: 1.5rem;
+        }
+
+        .form-content p {
+            margin-bottom: 20px;
+            color: var(--gray-color);
+            font-size: 0.95rem;
+        }
+
+        .form-image {
+            display: none;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid var(--light-gray);
+            border-radius: 5px;
+            font-family: var(--font-main);
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        /* Footer styles */
+        .footer {
+            background-color: var(--dark-color);
+            color: white;
+            position: relative;
+            padding-top: 60px;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%23212529" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="%23212529" opacity=".5"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%23212529"/></svg>') no-repeat;
+            background-size: cover;
+        }
+
+        .footer__inner {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .footer__col {
+            margin-bottom: 20px;
+        }
+
+        .footer-logo {
+            margin-bottom: 15px;
+        }
+
+        .footer-logo a {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .footer-about {
+            font-size: 0.9rem;
+            color: var(--light-gray);
+            margin-bottom: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-title {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        .footer-contacts .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+        }
+
+        .footer-contacts .contact-item i {
+            margin-top: 3px;
+        }
+
+        .work-hours .hours-item {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-menu li {
+            margin-bottom: 10px;
+        }
+
+        .footer-menu a {
+            font-size: 0.9rem;
+            color: var(--light-gray);
+            transition: var(--transition);
+            display: block;
+            padding: 5px 0;
+        }
+
+        .footer-menu a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            padding: 20px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 20px;
+        }
+
+        .copyright {
+            font-size: 0.8rem;
+            color: var(--light-gray);
+            margin-bottom: 10px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .footer-links a {
+            font-size: 0.8rem;
+            color: var(--light-gray);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 45px;
+            height: 45px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 99;
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Media Queries */
+        @media (min-width: 576px) {
+            .services__grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .portfolio__grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stats {
+                justify-content: space-around;
+            }
+        }
+
+        @media (min-width: 768px) {
+            html {
+                font-size: 17px;
+            }
+
+            .header__inner {
+                height: 80px;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .nav {
+                position: static;
+                width: auto;
+                background-color: transparent;
+                padding: 0;
+                box-shadow: none;
+                transform: none;
+                opacity: 1;
+            }
+
+            .nav__list {
+                flex-direction: row;
+                gap: 25px;
+            }
+
+            .header__contacts {
+                display: block;
+            }
+
+            .burger {
+                display: none;
+            }
+
+            .hero {
+                margin-top: 80px;
+            }
+
+            .hero__title {
+                font-size: 2.5rem;
+            }
+
+            .hero__text {
+                font-size: 1.1rem;
+            }
+
+            .section {
+                padding: 80px 0;
+            }
+
+            .section__title {
+                font-size: 2.2rem;
+            }
+
+            .about__inner {
+                flex-direction: row;
+                gap: 40px;
+            }
+
+            .about__content {
+                order: 1;
+            }
+
+            .about__image {
+                order: 2;
+            }
+
+            .form-container {
+                flex-direction: row;
+            }
+
+            .form-content {
+                padding: 40px;
+            }
+
+            .form-image {
+                display: block;
+                flex: 1;
+            }
+
+            .footer__inner {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .footer__col {
+                flex: 0 0 50%;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .services__grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .portfolio__grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .footer__col {
+                flex: 0 0 25%;
+            }
+
+            .footer__col:first-child {
+                flex: 0 0 30%;
+            }
+
+            .footer__col:nth-child(2) {
+                flex: 0 0 20%;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .hero__title {
+                font-size: 3rem;
+            }
+
+            .hero__text {
+                font-size: 1.2rem;
+            }
+
+            .section__title {
+                font-size: 2.5rem;
+            }
+
+            .services__grid {
+                gap: 30px;
+            }
+
+            .service-card__icon {
+                height: 80px;
+                font-size: 2.5rem;
+            }
+
+            .service-card__title {
+                padding: 20px 20px 10px;
+                font-size: 1.5rem;
+            }
+
+            .service-card__desc {
+                padding: 0 20px;
+                margin-bottom: 20px;
+            }
+
+            .service-card__footer {
+                padding: 15px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <a href="index.html" class="logo">
+                    <h1>Полиграфия <span>"Профи"</span></h1>
+                </a>
+
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li><a href="#services" class="nav__link">Услуги</a></li>
+                        <li><a href="#about" class="nav__link">О нас</a></li>
+                        <li><a href="#portfolio" class="nav__link">Портфолио</a></li>
+                        <li><a href="#contacts" class="nav__link">Контакты</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header__contacts">
+                    <a href="tel:+996555123456" class="phone-link">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>+996 (555) 123-456</span>
+                    </a>
+                </div>
+
+                <button class="burger" aria-label="Меню">
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Герой-секция -->
+        <section class="hero">
+            <div class="swiper hero-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide hero-slide" style="background-image: url('https://images.unsplash.com/photo-1603302576837-37561b2e2302?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80');">
+                        <div class="container">
+                            <div class="hero__content">
+                                <h2 class="hero__title">Профессиональная полиграфия</h2>
+                                <p class="hero__text">Качественная печать любой продукции для вашего бизнеса</p>
+                                <a href="#services" class="btn btn--primary">Наши услуги</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide hero-slide" style="background-image: url('https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80');">
+                        <div class="container">
+                            <div class="hero__content">
+                                <h2 class="hero__title">Широкоформатная печать</h2>
+                                <p class="hero__text">Баннеры, постеры и рекламные конструкции</p>
+                                <a href="#services" class="btn btn--primary">Подробнее</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide hero-slide" style="background-image: url('https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80');">
+                        <div class="container">
+                            <div class="hero__content">
+                                <h2 class="hero__title">Дизайн и печать</h2>
+                                <p class="hero__text">Разработка дизайна и профессиональная печать</p>
+                                <a href="#services" class="btn btn--primary">Заказать</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <!-- Секция услуг -->
+        <section id="services" class="section services">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">Наши услуги</h2>
+                    <p class="section__subtitle">Широкий спектр полиграфических услуг для вашего бизнеса</p>
+                </div>
+
+                <div class="services__grid">
+                    <div class="service-card">
+                        <div class="service-card__icon">
+                            <i class="fas fa-address-card"></i>
+                        </div>
+                        <h3 class="service-card__title">Визитки</h3>
+                        <p class="service-card__desc">Профессиональные визитки с индивидуальным дизайном</p>
+                        <div class="service-card__footer">
+                            <span class="price">от 100 сом</span>
+                            <a href="#" class="btn btn--small">Подробнее</a>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-card__icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <h3 class="service-card__title">Буклеты и каталоги</h3>
+                        <p class="service-card__desc">Качественные буклеты для рекламы ваших товаров</p>
+                        <div class="service-card__footer">
+                            <span class="price">от 300 сом</span>
+                            <a href="#" class="btn btn--small">Подробнее</a>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-card__icon">
+                            <i class="fas fa-camera-retro"></i>
+                        </div>
+                        <h3 class="service-card__title">Фотопечать</h3>
+                        <p class="service-card__desc">Печать фотографий на различных материалах</p>
+                        <div class="service-card__footer">
+                            <span class="price">от 50 сом</span>
+                            <a href="#" class="btn btn--small">Подробнее</a>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-card__icon">
+                            <i class="fas fa-ticket-alt"></i>
+                        </div>
+                        <h3 class="service-card__title">Флаеры и постеры</h3>
+                        <p class="service-card__desc">Яркая рекламная продукция для продвижения</p>
+                        <div class="service-card__footer">
+                            <span class="price">от 150 сом</span>
+                            <a href="#" class="btn btn--small">Подробнее</a>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-card__icon">
+                            <i class="fas fa-flag"></i>
+                        </div>
+                        <h3 class="service-card__title">Баннеры</h3>
+                        <p class="service-card__desc">Наружная реклама для привлечения клиентов</p>
+                        <div class="service-card__footer">
+                            <span class="price">от 500 сом</span>
+                            <a href="#" class="btn btn--small">Подробнее</a>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-card__icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3 class="service-card__title">Календари</h3>
+                        <p class="service-card__desc">Фирменные календари с вашим логотипом</p>
+                        <div class="service-card__footer">
+                            <span class="price">от 200 сом</span>
+                            <a href="#" class="btn btn--small">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция о нас -->
+        <section id="about" class="section about">
+            <div class="container">
+<div class="about__inner">
+  <div class="about__content">
+      <div class="section__header">
+          <h2 class="section__title">О нашей компании</h2>
+          <p class="section__subtitle">Мы - профессиональная полиграфия с многолетним опытом работы</p>
+      </div>
+      
+      <p>Полиграфия "Профи" работает на рынке полиграфических услуг Бишкека более 10 лет. За это время мы заслужили репутацию надежного партнера, предлагающего качественные услуги по доступным ценам.</p>
+      <p>Наша команда состоит из опытных дизайнеров, печатников и менеджеров, которые помогут реализовать любые ваши идеи в сфере полиграфии.</p>
+      
+      <div class="stats">
+          <div class="stat-item">
+              <span class="stat-number">10+</span>
+              <span class="stat-label">Лет опыта</span>
+          </div>
+          <div class="stat-item">
+              <span class="stat-number">500+</span>
+              <span class="stat-label">Клиентов</span>
+          </div>
+          <div class="stat-item">
+              <span class="stat-number">1000+</span>
+              <span class="stat-label">Проектов</span>
+          </div>
+      </div>
+      
+      <a href="#contacts" class="btn btn--primary">Связаться с нами</a>
+  </div>
+  
+  <div class="about__image">
+      <img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Наша типография">
+  </div>
+</div>
+</div>
+</section>
+
+<!-- Секция портфолио -->
+<section id="portfolio" class="section portfolio">
+<div class="container">
+<div class="section__header">
+  <h2 class="section__title">Наши работы</h2>
+  <p class="section__subtitle">Примеры выполненных проектов для наших клиентов</p>
+</div>
+
+<div class="portfolio__grid">
+  <div class="portfolio-item">
+      <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Визитки">
+      <div class="portfolio-item__overlay">
+          <h3>Корпоративные визитки</h3>
+      </div>
+  </div>
+  
+  <div class="portfolio-item">
+      <img src="https://images.unsplash.com/photo-1600856209923-34372e319a5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Буклеты">
+      <div class="portfolio-item__overlay">
+          <h3>Рекламные буклеты</h3>
+      </div>
+  </div>
+  
+  <div class="portfolio-item">
+      <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Календари">
+      <div class="portfolio-item__overlay">
+          <h3>Фирменные календари</h3>
+      </div>
+  </div>
+  
+  <div class="portfolio-item">
+      <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Баннеры">
+      <div class="portfolio-item__overlay">
+          <h3>Наружные баннеры</h3>
+      </div>
+  </div>
+  
+  <div class="portfolio-item">
+      <img src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Упаковка">
+      <div class="portfolio-item__overlay">
+          <h3>Фирменная упаковка</h3>
+      </div>
+  </div>
+  
+  <div class="portfolio-item">
+      <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Флаеры">
+      <div class="portfolio-item__overlay">
+          <h3>Рекламные флаеры</h3>
+      </div>
+  </div>
+</div>
+</div>
+</section>
+
+<!-- Секция отзывов -->
+<section class="section testimonials">
+<div class="container">
+<div class="section__header">
+  <h2 class="section__title">Отзывы клиентов</h2>
+  <p class="section__subtitle">Что говорят о нас наши клиенты</p>
+</div>
+
+<div class="swiper testimonials-swiper">
+  <div class="swiper-wrapper">
+      <div class="swiper-slide">
+          <div class="testimonial">
+              <p class="testimonial__text">Заказывали визитки для всего офиса. Сделали быстро, качественно и по разумной цене. Дизайн предложили очень стильный. Рекомендую эту полиграфию!</p>
+              <div class="testimonial__author">
+                  <div class="author-avatar">
+                      <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Айгуль Садыкова">
+                  </div>
+                  <div class="author-info">
+                      <h4>Айгуль Садыкова</h4>
+                      <span>Директор, ТОО "Азия Трейд"</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      <div class="swiper-slide">
+          <div class="testimonial">
+              <p class="testimonial__text">Работаем с этой полиграфией уже несколько лет. Всегда выполняют заказы в срок, а качество печати на высоте. Особенно нравится их подход к клиентам.</p>
+              <div class="testimonial__author">
+                  <div class="author-avatar">
+                      <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Артем Иванов">
+                  </div>
+                  <div class="author-info">
+                      <h4>Артем Иванов</h4>
+                      <span>Маркетинг менеджер, "Бишкек Плюс"</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      <div class="swiper-slide">
+          <div class="testimonial">
+              <p class="testimonial__text">Заказали печать меню для нашего ресторана. Сделали даже лучше, чем мы ожидали! Клиенты отмечают, что меню очень удобное и красивое. Спасибо!</p>
+              <div class="testimonial__author">
+                  <div class="author-avatar">
+                      <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Алина Кожомова">
+                  </div>
+                  <div class="author-info">
+                      <h4>Алина Кожомова</h4>
+                      <span>Владелец, Ресторан "Наурыз"</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="swiper-pagination"></div>
+</div>
+</div>
+</section>
+
+<!-- Секция контактов -->
+<section id="contacts" class="section contact-form">
+    <div class="container">
+        <div class="form-container">
+            <div class="form-content">
+                <h2 class="section__title">Свяжитесь с нами</h2>
+                <p class="section__subtitle">Заполните форму, и мы свяжемся с вами в ближайшее время</p>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Ваш Email" required>
+                    </div>
+                    <div class="form-group">
+                        <select id="serviceType" name="serviceType" required>
+                            <option value="">Выберите услугу</option>
+                            <option value="Визитки">Визитки</option>
+                            <option value="Буклеты и каталоги">Буклеты и каталоги</option>
+                            <option value="Фотопечать">Фотопечать</option>
+                            <option value="Флаеры и постеры">Флаеры и постеры</option>
+                            <option value="Другое">Другое</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Ваше сообщение" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn--primary">Отправить сообщение</button>
+                </form>
+                <div id="form-message" style="margin-top: 20px; text-align: center;"></div>
+            </div>
+            <div class="form-image" style="background-image: url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; background-position: center;">
+                </div>
+        </div>
+    </div>
+</section>
+</main>
+
+<!-- Футер -->
+<footer class="footer">
+<div class="container">
+<div class="footer__inner">
+<div class="footer__col">
+  <div class="footer-logo">
+      <a href="index.html">Полиграфия <span>"Профи"</span></a>
+  </div>
+  <p class="footer-about">Профессиональные полиграфические услуги в Бишкеке. Качественная печать по доступным ценам.</p>
+  <div class="social-links">
+      <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+  </div>
+</div>
+
+
+<div class="footer__col">
+  <h3 class="footer-title">Контакты</h3>
+  <div class="footer-contacts">
+      <div class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>г. Бишкек, ул. Советская, 123</span>
+      </div>
+      <div class="contact-item">
+          <i class="fas fa-phone-alt"></i>
+          <span>+996 (555) 123-456</span>
+      </div>
+      <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <span>info@polygraph-pro.kg</span>
+      </div>
+  </div>
+</div>
+
+<div class="footer__col">
+  <h3 class="footer-title">Часы работы</h3>
+  <div class="work-hours">
+      <div class="hours-item">
+          <span>Пн - Пт</span>
+          <span>9:00 - 18:00</span>
+      </div>
+      <div class="hours-item">
+          <span>Суббота</span>
+          <span>10:00 - 16:00</span>
+      </div>
+      <div class="hours-item">
+          <span>Воскресенье</span>
+          <span>Выходной</span>
+      </div>
+  </div>
+</div>
+
+<div class="footer__col">
+  <h3 class="footer-title">Меню</h3>
+  <ul class="footer-menu">
+      <li><a href="#services">Услуги</a></li>
+      <li><a href="#about">О нас</a></li>
+      <li><a href="#portfolio">Портфолио</a></li>
+      <li><a href="#contacts">Контакты</a></li>
+  </ul>
+</div>
+</div>
+
+<div class="footer-bottom">
+<p class="copyright">© 2023 Полиграфия "Профи". Все права защищены.</p>
+<div class="footer-links">
+  <a href="#">Политика конфиденциальности</a>
+  <a href="#">Условия использования</a>
+</div>
+</div>
+</div>
+</footer>
+
+<!-- Кнопка "Наверх" -->
+<a href="#" class="back-to-top" aria-label="Наверх">
+<i class="fas fa-arrow-up"></i>
+</a>
+
+<!-- Скрипты -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script>
+// Мобильное меню
+const burgerMenu = document.querySelector('.burger');
+const nav = document.querySelector('.nav');
+
+burgerMenu.addEventListener('click', () => {
+burgerMenu.classList.toggle('active');
+nav.classList.toggle('active');
+document.body.classList.toggle('no-scroll');
+});
+
+// Закрытие меню при клике на ссылку
+const navLinks = document.querySelectorAll('.nav__link');
+navLinks.forEach(link => {
+link.addEventListener('click', () => {
+burgerMenu.classList.remove('active');
+nav.classList.remove('active');
+document.body.classList.remove('no-scroll');
+});
+});
+
+// Слайдер героя
+const heroSwiper = new Swiper('.hero-swiper', {
+loop: true,
+autoplay: {
+delay: 5000,
+disableOnInteraction: false,
+},
+pagination: {
+el: '.swiper-pagination',
+clickable: true,
+},
+});
+
+// Слайдер отзывов
+const testimonialsSwiper = new Swiper('.testimonials-swiper', {
+slidesPerView: 1,
+spaceBetween: 20,
+pagination: {
+el: '.swiper-pagination',
+clickable: true,
+},
+breakpoints: {
+768: {
+  slidesPerView: 2,
+},
+992: {
+  slidesPerView: 3,
+}
+}
+});
+
+// Фиксированный хедер при скролле
+const header = document.querySelector('.header');
+window.addEventListener('scroll', () => {
+if (window.scrollY > 50) {
+header.classList.add('scrolled');
+} else {
+header.classList.remove('scrolled');
+}
+});
+
+// Кнопка "Наверх"
+const backToTop = document.querySelector('.back-to-top');
+window.addEventListener('scroll', () => {
+if (window.scrollY > 300) {
+backToTop.classList.add('active');
+} else {
+backToTop.classList.remove('active');
+}
+});
+
+// Плавная прокрутка для якорных ссылок
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+
+const targetId = this.getAttribute('href');
+if (targetId === '#') return;
+
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+  window.scrollTo({
+      top: targetElement.offsetTop - 80,
+      behavior: 'smooth'
+  });
+}
+});
+});
+</script>
+
+  
+   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script>
+    // Инициализация Swiper (уже есть в твоём коде)
+    const heroSwiper2 = new Swiper('.hero-swiper', {
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        speed: 800,
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
+    });
+
+    // Анимации для слайдов Swiper
+    heroSwiper2.on('slideChangeTransitionStart', function () {
+        const activeSlide = heroSwiper2.slides[heroSwiper2.activeIndex];
+        const title = activeSlide.querySelector('.hero__title');
+        const text = activeSlide.querySelector('.hero__text');
+        const btn = activeSlide.querySelector('.btn');
+
+        // Сбрасываем анимации
+        if (title) title.style.animation = 'none';
+        if (text) text.style.animation = 'none';
+        if (btn) btn.style.animation = 'none';
+    });
+
+    heroSwiper2.on('slideChangeTransitionEnd', function () {
+        const activeSlide = heroSwiper2.slides[heroSwiper2.activeIndex];
+        const title = activeSlide.querySelector('.hero__title');
+        const text = activeSlide.querySelector('.hero__text');
+        const btn = activeSlide.querySelector('.btn');
+
+        // Запускаем анимации
+        if (title) title.style.animation = 'fadeInUp 1s ease forwards';
+        if (text) text.style.animation = 'fadeInUp 1s ease 0.2s forwards';
+        if (btn) btn.style.animation = 'fadeInUp 1s ease 0.4s forwards';
+    });
+
+    // Инициализация анимаций для первого слайда при загрузке страницы
+    document.addEventListener('DOMContentLoaded', () => {
+        const firstSlide = document.querySelector('.hero-slide');
+        if (firstSlide) {
+            const title = firstSlide.querySelector('.hero__title');
+            const text = firstSlide.querySelector('.hero__text');
+            const btn = firstSlide.querySelector('.btn');
+
+            if (title) title.style.animation = 'fadeInUp 1s ease forwards';
+            if (text) text.style.animation = 'fadeInUp 1s ease 0.2s forwards';
+            if (btn) btn.style.animation = 'fadeInUp 1s ease 0.4s forwards';
+        }
+    });
+
+
+    // Логика бургер-меню
+    const burger2 = document.querySelector('.burger');
+    const nav2 = document.querySelector('.nav');
+
+    if (burger2 && nav2) {
+        burger2.addEventListener('click', () => {
+            burger2.classList.toggle('active');
+            nav2.classList.toggle('active');
+        });
+
+        // Закрываем меню при клике на ссылку (для мобильных устройств)
+        nav2.querySelectorAll('.nav__link').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth < 768) { // Проверяем размер экрана
+                    burger2.classList.remove('active');
+                    nav2.classList.remove('active');
+                }
+            });
+        });
+    }
+
+    // Изменение цвета хедера при скролле
+    const header2 = document.querySelector('.header');
+    if (header2) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header2.classList.add('scrolled');
+            } else {
+                header2.classList.remove('scrolled');
+            }
+        });
+    }
+
+    // Кнопка "Наверх"
+    const backToTopButton = document.querySelector('.back-to-top');
+    if (backToTopButton) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) { // Показываем кнопку после 300px скролла
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
+            }
+        });
+
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    // --- НОВЫЙ JavaScript ДЛЯ ФОРМЫ КОНТАКТОВ ---
+    const contactForm = document.getElementById('contactForm');
+    const formMessage = document.getElementById('form-message');
+
+    if (contactForm && formMessage) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault(); // Отменяем стандартное поведение отправки формы (перезагрузку страницы)
+
+            // Собираем данные из формы
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                serviceType: document.getElementById('serviceType').value,
+                message: document.getElementById('message').value,
+            };
+
+            // Очищаем предыдущие сообщения
+            formMessage.textContent = '';
+            formMessage.style.color = '';
+
+            try {
+                // Отправляем данные на наш бэкенд
+                const response = await fetch('http://localhost:3001/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json', // Указываем, что отправляем JSON
+                    },
+                    body: JSON.stringify(formData), // Преобразуем данные в JSON-строку
+                });
+
+                const result = await response.json(); // Парсим JSON-ответ от сервера
+
+                if (response.ok) { // Если статус ответа 2xx (например, 200, 201)
+                    formMessage.textContent = result.message;
+                    formMessage.style.color = 'var(--success-color)'; // Успешное сообщение
+                    contactForm.reset(); // Очищаем форму после успешной отправки
+                } else {
+                    // Если сервер вернул ошибку (статус 4xx или 5xx)
+                    const errorMessage = result.message || 'Произошла ошибка при отправке сообщения.';
+                    formMessage.textContent = errorMessage;
+                    formMessage.style.color = 'var(--warning-color)'; // Сообщение об ошибке
+                    if (result.errors && Array.isArray(result.errors)) {
+                        result.errors.forEach(err => {
+                            formMessage.textContent += `\n- ${err}`;
+                        });
+                    }
+                }
+            } catch (error) {
+                console.error('Ошибка сети или сервера:', error);
+                formMessage.textContent = 'Не удалось соединиться с сервером. Пожалуйста, попробуйте позже.';
+                formMessage.style.color = 'var(--warning-color)'; // Сообщение об ошибке
+            }
+        });
+    }
+    // --- КОНЕЦ НОВОГО JavaScript ---
+</script>
+</body>
+</html>
