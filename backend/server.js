@@ -9,8 +9,14 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:3001', // Укажи здесь фактический домен твоего фронтенда
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Разреши нужные HTTP-методы
+  allowedHeaders: ['Content-Type', 'Authorization'], // Разреши нужные заголовки
+  privateNetworkAccess: true // <--- ЭТА СТРОКА ОЧЕНЬ ВАЖНА ДЛЯ PNA!
+}));
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // --- НОВЫЙ КОД ДЛЯ ОТДАЧИ СТАТИЧЕСКИХ ФАЙЛОВ ---
 // Указываем Express, где находятся статические файлы фронтенда
